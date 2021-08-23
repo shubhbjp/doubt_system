@@ -1,0 +1,29 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 1
+  timeout: false
+
+development:
+  <<: *default
+  database: railyatri_production
+  username: railstager
+  password: OlL0G_20
+  host: yatrastage.railyatri.in
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: railyatri_production
+  username: railstager
+  password: OlL0G_20
+  host: yatrastage.railyatri.in
+production:
+  <<: *default
+  database: railyatri_production
+  username: railstager
+  password: OlL0G_20
+  host: yatrastage.railyatri.in

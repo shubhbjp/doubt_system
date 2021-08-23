@@ -1,0 +1,18 @@
+<form action="<%=login_save_path%>" class="form" method="post">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<div class="form-field">
+		<div class="label">Email</div>
+		<input class="field" name="email" type="text" placeholder="Email"></input>
+	</div>
+	<div class="form-field">
+		<div class="label">Name</div>
+		<input class="field" name="name" type="text" placeholder="Name"></input>
+	</div>
+	<div class="submit">
+		<input type="submit" class="button" value="Login">
+	</div>
+</form>
+
+<%=link_to "Ask Doubt", questions_path%>
+<%=link_to "View Doubts", questions_view_path%>
+<%=link_to "Solve Doubt", questions_solve_doubt_path%>

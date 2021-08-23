@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	function answer_doubt(id){
+		window.open("/questions/solve-doubt/"+id,"_self")
+	}
+</script>
+<%= stylesheet_link_tag 'application'%>
+<body class="doubt-body">
+<div class="container">
+	<div class="inline-container inline-doubt-text">
+		<img src="/assets/coding_ninja.svg" width="50px;" height="30px;">
+		<%=link_to "Home", "/"%>  |  <%=link_to "Raise Doubt", questions_path%> | <%=link_to "Solve Doubt", questions_solve_doubt_path%>
+	</div>
+	<div class="logout">
+		<span class="logout">Logout</span>
+	</div>
+</div>
+<div class="doubt">
+	<div class="inline-doubt">
+		<span class="inline-doubt-text">Solve Doubts</span>
+			<%@unsolved_questions.each do |ques|%>
+				<div class="inline-doubt-container">
+					<div class="doubt-list">
+						<div class="doubt-title font-color"><%=ques[:title]%> <input type="submit" name="" value="Accept" class="comment-submit-btn f-right" onclick="answer_doubt(<%=ques[:id]%>)"></div>
+					</div>
+				</div>
+			<%end%>
+	</div>
+</div>
+</body>

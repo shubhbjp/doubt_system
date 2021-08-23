@@ -1,0 +1,62 @@
+<%= stylesheet_link_tag 'application'%>
+<body class="doubt-body">
+<div class="container">
+	<div class="inline-container inline-doubt-text">
+		<img src="/assets/coding_ninja.svg" width="50px;" height="30px;">
+		<%=link_to "Home", "/"%>  |  <%=link_to "Raise Doubt", questions_path%>
+	</div>
+	<div class="logout">
+		<span class="logout">Logout</span>
+	</div>
+</div>
+<div class="doubt">
+	<div class="inline-doubt">
+		<span class="inline-doubt-text">Home</span>
+		<span class="doubt-size"><%=@all_questions.size%> Doubts</span>
+			<%@all_questions.each do |ques|%>
+				<div class="inline-doubt-container">
+					<div class="doubt-list">
+						<%if ques[:answer].present? && ques[:answer_by].present?%>
+							<div class="doubt-title font-color"><%=ques[:title]%></div>
+							<div class="resolved">Resolved</div>
+						<%else%>
+							<div class="doubt-title font-color"><%=ques[:title]%></div>
+						<%end%>
+						<div class="doubt-description font-color"><%=ques[:description]%></div>
+						<div class="text-right font-color">Asked By: <%=ques.login_user.try(:name)%> on <%=ques[:created_at].strftime("%b %d, %H:%M")%></div>
+						<%if ques[:answer].present? && ques[:answer_by].present?%>
+							<div class="doubt-answer font-color">
+								<b>Answer: </b> <%=ques[:answer]%>
+								<p> Answered by <%=ques.login_user.try(:name)%> on <%=ques[:updated_at].strftime("%b %d, %H:%M")%>
+							</div>
+						<%end%>
+					</div>
+					<div class="doubt-border-bottom"></div>
+					<div class="comment-size">
+						<%comment_data=ques.comment.reverse%>
+						<%=comment_data.size%> Comments
+					</div>
+					<div class="comment-list">
+						<%comment_data.each  do |cd|%>
+							<div class="comment-text"> <%=cd.login_user.try(:name)%> : <%=cd.comment%> </div>
+						<%end%>
+
+					</div>
+					<div class="add-comment">
+						<form action="<%=comment_save_path%>" class="" method="post">
+							<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+							<%= hidden_field_tag :post_id, ques[:id] %>
+							
+							<div class="post-comment-field">
+								<input class="comment-field" name="comment" type="text" placeholder="Add Comment"></input>
+							</div>
+							<div class="comment-submit">
+								<input type="submit" class="comment-submit-btn" value="Comment">
+							</div>
+						</form>
+					</div>
+				</div>
+			<%end%>
+	</div>
+</div>
+</body>

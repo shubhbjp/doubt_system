@@ -1,0 +1,170 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.doubt-body{
+    background-color: white;
+    margin: 0px;
+}
+.container{
+    display: flex;
+    background-color: #d2d9e0;
+    padding: 10px;
+}
+.inline-container{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+.doubt{
+    border: 1px solid #aab9c7;
+    background-color: white;
+}
+.inline-doubt{
+    padding: 30px;
+}
+.inline-doubt-text{
+    font-size: 30px;
+    color: #0a3056;
+    font-weight: bold;
+}
+.inline-doubt-container{
+    border: 2px solid #768fa9;
+    background-color: #d2d9e0;
+    margin-top: 30px;
+    padding: 10px;
+}
+.form{
+    margin: 0px 20px 0px 20px;
+}
+.label{
+    font-size: 18px;
+    color: darkslategrey;
+    margin-bottom: 5px;
+}
+.field{
+    border: 2px solid #1f47d8;
+    border-radius: 5px;
+    padding: 8px;
+    width: -webkit-fill-available;
+}
+.button{
+    background-color: #1f47d8;
+    padding: 10px;
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+}
+.form-field{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.submit{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+.logout{
+    background-color: #786ae8;
+    padding: 8px;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.error{
+    color: red;
+}
+.doubt-size{
+    position: absolute;
+    right: 15px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.doubt-list{
+    padding: 0px 10px 0px 10px;
+}
+.font-color{
+    color: #08082b;
+}
+.doubt-title{
+    font-weight: 100;
+    font-size: 30px;
+}
+.doubt-description{
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: normal;
+}
+.text-right{
+    text-align: right;
+    margin-top:  30px;
+}
+.doubt-border-bottom{
+    border-bottom: 2px solid #768fa9;
+    margin:  20px -10px 10px -10px;
+    position: relative;
+    opacity: 0.6;
+}
+.post-comment-field{
+    width: 85%;
+    position: relative;
+    display: inline-block;
+}
+.comment-field{
+    padding: 10px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #768fa9;
+    
+}.comment-submit{
+    width: 5%;
+    position: relative;
+    display: inline-block;
+}.comment-submit-btn{
+    background-color: white;
+    color: blue;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #768fa9;
+    margin-left: 10px;
+}.comment-text{
+    background-color: #e4e8ea;
+    padding: 10px;
+    border: 1px solid #768fa9;
+    margin: 10px 0px 10px 0px;
+}.f-right{
+    float: right;
+}.disp-block{
+    display: block;
+    position: relative;
+}.specific-doubt-ques{
+    display: inline-block;
+    position: relative;
+    width: 65%;
+}.specific-doubt-ans{
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    margin-left: 30px;
+    min-height: 100px;
+}.answer-submit{
+    text-align: right;
+    margin: 20px 0px 20px 0px;
+}.resolved{
+    width: 100px;
+    padding: 10px;
+    float: right;
+    background-color: #3fdfe6;
+    text-align: center;
+}
